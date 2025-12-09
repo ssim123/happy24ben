@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at top, #ffe7ef, #ffd1e3, #f9c6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.wrapper {
+  background: white;
+  border-radius: 24px;
+  padding: 24px 24px 32px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #d34b74;
+  padding: 0 10px;
+  white-space: normal;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* exactly 6 per row */
+  gap: 16px;
+  justify-items: center;
+}
+
+.heart-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.heart {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  
+  font-size: 2.2rem;       /* bigger heart emoji */
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff9fb3;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 92, 143, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.heart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 92, 143, 0.5);
+  background: #ff7a99;
+}
+
+.heart.opened {
+  background: #ff507d;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(255, 80, 125, 0.5);
+}
+
+.heart-label {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.message {
+  display: none;
+  font-size: 0.8rem;
+  text-align: center;
+  background: #fff4f8;
+  padding: 6px 10px;
+  border-radius: 12px;
+  color: #444;
+  min-height: 30px;
+}
+
+.message.visible {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 16px;
+  }
+
+.title {
+    font-size: 1.5rem;
+  }
+
+
+  .heart {
+    width: 64px;
+    height: 64px;
+    font-size: 1.8rem;
+  }
+}
